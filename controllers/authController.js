@@ -1,6 +1,6 @@
 const UserSchema = require('../models/User');
 const { StatusCodes } = require('http-status-codes');
-const createDatabase = require('../seeds/createTestAcc');
+const createUserData = require('../seeds/createTestAcc2');
 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
@@ -65,7 +65,7 @@ const register = async (req, res, next) => {
 };
 
 const createTestAcc = async (req, res, next) => {
-  const user = await createDatabase();
+  const user = await createUserData();
   const token = user.createJWT();
   res.status(StatusCodes.CREATED).json({
     success: true,
