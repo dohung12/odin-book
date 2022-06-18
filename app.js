@@ -55,11 +55,11 @@ app.use(passport.initialize());
  * ROUTE
  */
 
-app.use('/', authRouter);
-app.use('/uploads', uploadRouter);
-app.use('/user', verifyUser, userRouter);
-app.use('/post', verifyUser, postRouter);
-app.use('/search', searchHandler);
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/uploads', verifyUser, uploadRouter);
+app.use('/api/v1/user', verifyUser, userRouter);
+app.use('/api/v1/post', verifyUser, postRouter);
+app.use('/api/v1/search', verifyUser, searchHandler);
 
 app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));

@@ -5,7 +5,7 @@ const useAuthFetch = () => {
   const { state, dispatch } = useAppContext();
 
   const authFetch = axios.create({
-    baseURL: '',
+    baseURL: '/api/v1',
   });
 
   // request interceptor
