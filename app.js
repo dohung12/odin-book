@@ -55,7 +55,7 @@ app.use(passport.initialize());
  * ROUTE
  */
 
-app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/', authRouter);
 app.use('/api/v1/uploads', verifyUser, uploadRouter);
 app.use('/api/v1/user', verifyUser, userRouter);
 app.use('/api/v1/post', verifyUser, postRouter);

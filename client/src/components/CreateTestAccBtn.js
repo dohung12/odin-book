@@ -14,7 +14,7 @@ const CreateTestAccBtn = () => {
     setIsLoading(true);
 
     try {
-      const { data } = await axios.get('/createTestAcc');
+      const { data } = await axios.get('/api/v1/createTestAcc');
       const { user, token } = data;
       dispatch({
         type: 'SETUP_USER',
