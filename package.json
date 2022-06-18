@@ -27,10 +27,10 @@
     "mongoose": "^6.3.5",
     "morgan": "~1.10.0",
     "passport": "^0.6.0",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "@faker-js/faker": "^7.2.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.2.0",
     "nodemon": "^2.0.16",
     "concurrently": "^7.2.2"
   }
