@@ -14,6 +14,7 @@ import FriendRequestToOthers from './FriendRequestToOthers';
 import FriendRequestSuggestion from './FriendRequestSuggestion';
 import SmallSidebar from './SmallSidebar/';
 import PageBtnContainer from './PageBtnContainer/';
+import SingleComment from './SingleComment';
 export {
   Avatar,
   Logo,
@@ -31,4 +32,5 @@ export {
   FriendRequestSuggestion,
   SmallSidebar,
   PageBtnContainer,
+  SingleComment,
 };
