@@ -1,63 +1,26 @@
 import { useState } from 'react';
-
-import styled from 'styled-components';
+import Wrapper from '../assets/Wrapper/PostFromWrapper';
 import { useAppContext } from '../context/appContext';
-import { useAlert, useAuthFetch } from '../hooks';
+import { useAlert, useAuthFetch, useUpdatePosts } from '../hooks';
 import Alert from './Alert';
 
-const Wrapper = styled.div`
-  display: flex;
-  gap: 1rem;
-  background-color: #fff;
-  padding: 1rem;
-  align-self: center;
-  border-radius: 0.5rem;
-  width: 100%;
-
-  img {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    border: 1px solid var(--contrast);
-  }
-
-  div {
-    width: 100%;
-    form {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1rem;
-      button {
-        width: fit-content;
-      }
-
-      input,
-      button {
-        margin: 0 !important;
-      }
-    }
-  }
-`;
-
 const NewPostForm = () => {
-  const [newPost, setNewPost] = useState('');
-  const { state, dispatch } = useAppContext();
+  // HOOKS
   const authFetch = useAuthFetch();
-  const [loading, setLoading] = useState(false);
+  const updatePosts = useUpdatePosts();
+
+  const { state } = useAppContext();
+  const { profilePic } = state.user;
+
   const [alert, displayAlert] = useAlert();
   const { showAlert, alertText, alertType } = alert;
-  const { profilePic } = state.user;
+
+  const [newPost, setNewPost] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const updatePost = (post) => {
     const posts = [post, ...state.posts];
-    dispatch({
-      type: 'UPDATE_POSTS',
-      payload: {
-        posts,
-      },
-    });
+    updatePosts(posts);
   };
 
   const handleChange = (e) => {
