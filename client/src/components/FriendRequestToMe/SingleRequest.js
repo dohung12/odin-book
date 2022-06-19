@@ -63,7 +63,14 @@ const SingleFriendRequest = ({ targetUserId }) => {
             email={email}
           />
           <div className='btn-container'>
-            <div role={'button'} onClick={handleAccept}>
+            <div
+              role={'button'}
+              onClick={handleAccept}
+              style={{
+                backgroundColor: '#43a047',
+                borderColor: '#43a047',
+              }}
+            >
               <FaCheck color='white' />
             </div>
             <div role={'button'} className='contrast' onClick={handleDecline}>

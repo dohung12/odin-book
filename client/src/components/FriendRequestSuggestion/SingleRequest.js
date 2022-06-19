@@ -32,7 +32,15 @@ const SingleFriendRequest = ({ profilePic, username, email, _id }) => {
         username={username}
         email={email}
       />
-      <button disabled={isLoading} aria-busy={isLoading} onClick={handleClick}>
+      <button
+        disabled={isLoading}
+        aria-busy={isLoading}
+        onClick={handleClick}
+        style={{
+          backgroundColor: '#43a047',
+          borderColor: '#43a047',
+        }}
+      >
         <FaPlus color='#fff' />
       </button>
     </Wrapper>

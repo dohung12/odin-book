@@ -2,9 +2,10 @@ import Wrapper from '../../assets/Wrapper/IndependenceBlockWrapper';
 import SingleRequest from './SingleRequest';
 
 const FriendRequestToOthers = ({ requestToOthers }) => {
+  const showDetail = window.innerWidth > 992;
   return (
-    <Wrapper>
-      <h6>People who you already sent friend request.</h6>
+    <Wrapper open={showDetail}>
+      <summary>Already sent friend request</summary>
       {requestToOthers.map((item) => {
         if (typeof item === 'string') {
           return <SingleRequest key={item} targetUserId={item} />;

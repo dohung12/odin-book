@@ -59,6 +59,7 @@ const SingleFriendRequest = ({ targetUserId }) => {
             onClick={handleClick}
             disabled={isLoading}
             aria-busy={isLoading}
+            className='contrast'
           >
             <FaTimes color='#fff' />
           </button>

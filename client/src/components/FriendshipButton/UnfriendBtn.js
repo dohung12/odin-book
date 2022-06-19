@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import { TbFriendsOff } from 'react-icons/tb';
+import { FaUserSlash } from 'react-icons/fa';
 
 import { useAuthFetch, useUpdateUser } from '../../hooks';
 
@@ -27,7 +27,7 @@ const UnfriendBtn = ({ targetUserId, showText }) => {
   };
   return (
     <Wrapper disabled={isLoading} onClick={handleClick}>
-      {showText ? 'Unfriend' : <TbFriendsOff color='white' />}
+      {showText ? 'Unfriend' : <FaUserSlash color='white' />}
     </Wrapper>
   );
 };

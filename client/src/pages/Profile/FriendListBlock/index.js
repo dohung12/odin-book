@@ -1,17 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import SingleFriendCard from './SingleFriendCard';
-
-const Wrapper = styled.div`
-  background-color: #fff;
-  border-radius: 0.5rem;
-  padding: 1rem;
-`;
+import Wrapper from '../../../assets/Wrapper/IndependenceBlockWrapper';
 
 const FriendListBlock = ({ friendList }) => {
   return (
-    <Wrapper>
-      <h6>Friends list</h6>
+    <Wrapper open={window.innerWidth > 992}>
+      <summary>Friends list</summary>
       {friendList.length === 0 && <h6>Friend list is empty</h6>}
 
       {friendList.map((_id) => {
