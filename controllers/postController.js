@@ -32,6 +32,11 @@ const getAllPosts = async (req, res) => {
     .populate({
       path: 'comments',
       populate: { path: 'author' },
+      options: {
+        sort: {
+          createdAt: -1,
+        },
+      },
     })
     .skip(skip)
     .limit(limit);
@@ -51,6 +56,11 @@ const getSinglePost = async (req, res) => {
     .populate({
       path: 'comments',
       populate: { path: 'author' },
+      options: {
+        sort: {
+          createdAt: -1,
+        },
+      },
     });
 
   res.status(200).json({ post });
