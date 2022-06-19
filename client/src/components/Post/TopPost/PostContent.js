@@ -1,4 +1,5 @@
 import React from 'react';
+import Wrapper from '../../../assets/Wrapper/PostBtnsContainer';
 import DelBtn from './DelBtn';
 import EditBtn from './EditBtn';
 
@@ -15,7 +16,7 @@ const PostContent = ({
       <p className='content'>{postContent}</p>
       {/* IF CURRENT USER IS THE AUTHOR OF POST, DISPLAY EDIT, DEL BUTTONS */}
       {hasPermission && (
-        <div className='btn-container'>
+        <Wrapper>
           <EditBtn values={values} setValues={setValues} />
           <DelBtn
             values={values}
@@ -23,7 +24,7 @@ const PostContent = ({
             postId={postId}
             updatePosts={updatePosts}
           />
-        </div>
+        </Wrapper>
       )}
     </>
   );

@@ -2,31 +2,11 @@ import React, { useState, useEffect } from 'react';
 import img from '../assets/images/auth.svg';
 import { FormRow, Alert } from '../components/index';
 import axios from 'axios';
-import styled from 'styled-components';
 import { useAppContext } from '../context/appContext';
 import { useNavigate } from 'react-router-dom';
 import useAlert from '../hooks/useAlert';
 import { addToLocalStorage } from '../utils/localStorage';
-
-const Wrapper = styled.main`
-  margin-top: 2rem;
-
-  .img-block {
-    img {
-      height: 50%;
-      margin: auto;
-      display: none;
-      @media (min-width: 992px) {
-        display: block;
-      }
-    }
-  }
-
-  hgroup {
-    text-align: center;
-    margin: auto;
-  }
-`;
+import Wrapper from '../assets/Wrapper/RegisterPageWrapper';
 
 // hooks' init states
 const initUserState = {

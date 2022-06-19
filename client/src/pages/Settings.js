@@ -1,37 +1,10 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { useAppContext } from '../context/appContext';
 import { Alert } from '../components/';
 import useAlert from '../hooks/useAlert';
-import axios from 'axios';
 import useAuthFetch from '../hooks/useAuthFetch';
 import { addToLocalStorage } from '../utils/localStorage';
-
-const Wrapper = styled.section`
-  padding: 3rem;
-  width: 600px;
-  margin: auto;
-  background-color: #fff;
-  border-radius: 0.5rem;
-
-  .img-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1rem;
-    gap: 1rem;
-    img {
-      width: 50%;
-      border-radius: 0.5rem;
-      border: 1px solid #ccc;
-    }
-  }
-
-  #email {
-    cursor: not-allowed;
-  }
-`;
+import Wrapper from '../assets/Wrapper/SettingsPageWrapper';
 
 const Profile = () => {
   const { state, dispatch } = useAppContext();
@@ -60,7 +33,7 @@ const Profile = () => {
     formData.append('image', imageFile);
     setIsLoading(true);
     try {
-      const { data } = await axios.post('/uploads', formData, {
+      const { data } = await authFetch.post('/uploads', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

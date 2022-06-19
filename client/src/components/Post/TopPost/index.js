@@ -8,21 +8,6 @@ import UserInfoWrapper from '../../../assets/Wrapper/UserInfoBlockWrapper';
 import PostContent from './PostContent';
 
 const Wrapper = styled.div`
-  .btn-container {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-    align-items: center;
-    div {
-      width: auto;
-      padding: 0;
-      margin: 0;
-      border: 0;
-      color: var(--muted-color);
-      text-decoration: underline;
-    }
-  }
-
   .loading {
     text-align: center;
     width: 100%;
