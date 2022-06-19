@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.nav`
-  box-shadow: 0 2px 0 rgba(115, 130, 140, 0.2);
+  box-shadow: rgb(0 0 0 / 10%) 0px 1px 0px 0px;
   background-color: #fff;
 
   li {

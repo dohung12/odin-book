@@ -1,14 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
 import Logo from './Logo';
-
-const Wrapper = styled.nav`
-  box-shadow: 0 1px 0 var(--nav-border-color);
-`;
 
 const PublicNavBar = () => {
   return (
-    <Wrapper className='container-fluid'>
+    <nav
+      className='container-fluid'
+      style={{
+        boxShadow: 'rgb(0 0 0 / 10%) 0px 1px 0px 0px',
+      }}
+    >
       <ul>
         <li
           style={{
@@ -39,7 +38,7 @@ const PublicNavBar = () => {
           </a>
         </li>
       </ul>
-    </Wrapper>
+    </nav>
   );
 };
 
