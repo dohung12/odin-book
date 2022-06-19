@@ -1,50 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
 import AddFriendBlock from './AddFriendBtn';
-import Avatar from '../../../components/Avatar';
+import Wrapper from '../../../assets/Wrapper/UserInfoBlockWrapper';
+import UserInfo from '../../../components/UserInfo';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 1rem;
-  gap: 0.5rem;
-  hgroup {
-    margin: 0;
-    padding: 0;
-    small {
-      color: var(--secondary);
-    }
-
-    h6 {
-      color: var(--primary);
-      text-transform: capitalize;
-      margin: 0;
-    }
-
-    min-width: 200px;
-  }
-
-  button {
-    margin-bottom: 0;
-    width: auto;
-  }
-`;
-
-const UserInfo = ({ profilePic, _id: userId, username, email }) => {
+const SingleUser = ({ profilePic, _id: userId, username, email }) => {
   return (
     <Wrapper>
-      <Avatar src={profilePic} />
-      <hgroup>
-        <a href={`/user/${userId}`}>
-          <h6>{username}</h6>
-        </a>
-        <small>{email}</small>
-      </hgroup>
-
-      <AddFriendBlock userId={userId} />
+      <UserInfo
+        profilePic={profilePic}
+        _id={userId}
+        username={username}
+        email={email}
+      />
+      {/* <AddFriendBlock userId={userId} /> */}
     </Wrapper>
   );
 };
 
-export default UserInfo;
+export default SingleUser;
