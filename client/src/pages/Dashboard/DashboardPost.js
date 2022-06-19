@@ -28,7 +28,6 @@ const DashboardPost = () => {
     fetchPosts();
   }, [page, numOfPages]);
 
-  console.log(numOfPages);
   return (
     <>
       {isLoading && <h1 aria-busy={isLoading}>Loading...</h1>}
