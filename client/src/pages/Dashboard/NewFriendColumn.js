@@ -35,7 +35,7 @@ const NewFriendColumn = () => {
       {isLoading ? (
         <h3 aria-busy={true}>Loading...</h3>
       ) : (
-        <div>
+        <div className='new-friend-column'>
           <FriendRequestToMe requestToMe={requestToMe} />
           <FriendRequestToOthers requestToOthers={requestToOthers} />
           <FriendRequestSuggestion requestSuggestion={values} />

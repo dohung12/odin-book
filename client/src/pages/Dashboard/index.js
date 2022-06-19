@@ -6,8 +6,17 @@ import DashboardPost from './DashboardPost';
 import NewFriendColumn from './NewFriendColumn';
 
 const Wrapper = styled.section`
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  .new-friend-column {
+    display: none;
+  }
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    .new-friend-column {
+      display: flex;
+    }
+  }
+
   background-color: #eff3f6 !important;
   gap: 1rem;
 
