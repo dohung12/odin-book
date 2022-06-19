@@ -27,6 +27,10 @@ const Wrapper = styled.section`
       border: 1px solid #ccc;
     }
   }
+
+  #email {
+    cursor: not-allowed;
+  }
 `;
 
 const Profile = () => {
@@ -126,6 +130,7 @@ const Profile = () => {
 
         <label htmlFor='email'>Email</label>
         <input
+          id='email'
           type={'email'}
           name='email'
           placeholder={'Email'}

@@ -1,0 +1,76 @@
+import React from 'react';
+import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
+import Wrapper from './Wrapper';
+
+const PageBtnContainer = ({ page, numOfPages, changePage }) => {
+  const pages = Array.from(
+    {
+      length: numOfPages,
+    },
+
+    (_, index) => {
+      return index + 1;
+    }
+  );
+
+  const toPrevPage = () => {
+    let newPage = page - 1;
+    if (newPage < 1) {
+      newPage = numOfPages;
+    }
+
+    changePage(newPage);
+  };
+
+  const toNextPage = () => {
+    let newPage = page + 1;
+    if (newPage > numOfPages) {
+      newPage = 1;
+    }
+
+    changePage(newPage);
+  };
+
+  return (
+    <Wrapper>
+      <div
+        role={'button'}
+        className='prev-btn'
+        onClick={() => {
+          toPrevPage();
+        }}
+      >
+        <HiChevronDoubleLeft color='#5d8aa8' />
+        prev
+      </div>
+      <div className='btn-container'>
+        {pages.map((pageNumber) => {
+          return (
+            <button
+              className={pageNumber === page ? 'pageBtn active' : 'pageBtn'}
+              key={pageNumber}
+              onClick={() => {
+                changePage(pageNumber);
+              }}
+            >
+              {pageNumber}
+            </button>
+          );
+        })}
+      </div>
+
+      <div
+        role={'button'}
+        className='next-btn'
+        onClick={() => {
+          toNextPage();
+        }}
+      >
+        <HiChevronDoubleRight color='#5d8aa8' />
+        next
+      </div>
+    </Wrapper>
+  );
+};
+
+export default PageBtnContainer;

@@ -5,8 +5,12 @@ const checkPermission = require('../utils/checkPermission');
 const { StatusCodes } = require('http-status-codes');
 
 const getAllPosts = async (req, res) => {
-  // get user
   const { userId } = req.user;
+  // get user
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 15;
+  const skip = (page - 1) * limit;
+
   const user = await UserSchema.findById(userId);
   if (!user) {
     res.status(StatusCodes.NOT_FOUND).json({
@@ -16,20 +20,26 @@ const getAllPosts = async (req, res) => {
   }
 
   // get post from user and all friends in friend list
-  const authors = [...user.friends.accepted, user];
-  const posts = await PostSchema.find({
+  const queryObj = {
     author: {
-      $in: authors,
+      $in: [...user.friends.accepted, user],
     },
-  })
+  };
+
+  const posts = await PostSchema.find(queryObj)
     .sort({ createdAt: -1 })
     .populate('author comments likes')
     .populate({
       path: 'comments',
       populate: { path: 'author' },
-    });
+    })
+    .skip(skip)
+    .limit(limit);
 
-  res.status(200).json({ count: posts.length, posts });
+  const totalPosts = await PostSchema.countDocuments(queryObj);
+  const numOfPages = Math.ceil(totalPosts / limit);
+
+  res.status(200).json({ count: posts.length, posts, numOfPages });
 };
 
 const getSinglePost = async (req, res) => {

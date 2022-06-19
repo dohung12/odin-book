@@ -13,6 +13,7 @@ import FriendRequestToMe from './FriendRequestToMe/';
 import FriendRequestToOthers from './FriendRequestToOthers';
 import FriendRequestSuggestion from './FriendRequestSuggestion';
 import SmallSidebar from './SmallSidebar/';
+import PageBtnContainer from './PageBtnContainer/';
 export {
   Avatar,
   Logo,
@@ -29,4 +30,5 @@ export {
   FriendRequestToOthers,
   FriendRequestSuggestion,
   SmallSidebar,
+  PageBtnContainer,
 };
