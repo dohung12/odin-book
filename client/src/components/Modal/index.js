@@ -23,7 +23,7 @@ const PostWrapper = styled.div`
     margin-bottom: 0;
   }
 
-  padding: 3rem !important;
+  padding: 1rem !important;
   border: 1px solid #ccc !important;
 `;
 
@@ -46,7 +46,10 @@ const Modal = ({ dataTarget, showModal, toggleModal, onConfirm, postInfo }) => {
           data-target={dataTarget}
           onClick={toggleModal}
         ></a>
-        <h2>Remove post!</h2>
+        <hgroup>
+          <h2>Remove Confirmation!</h2>
+          <p>Do you want to remove this post?</p>
+        </hgroup>
         <PostWrapper>
           <div className='author'>
             <Avatar src={profilePic} />
