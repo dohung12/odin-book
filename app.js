@@ -31,7 +31,7 @@ const authRouter = require('./routes/authRoute');
 const userRouter = require('./routes/userRoute');
 const uploadRouter = require('./routes/uploadRoute');
 const postRouter = require('./routes/postRoute');
-const { searchHandler } = require('./controllers/searchController');
+const searchRouter = require('./routes/searchRoute');
 
 const app = express();
 
@@ -59,7 +59,7 @@ app.use('/api/v1/', authRouter);
 app.use('/api/v1/uploads', verifyUser, uploadRouter);
 app.use('/api/v1/user', verifyUser, userRouter);
 app.use('/api/v1/post', verifyUser, postRouter);
-app.use('/api/v1/search', verifyUser, searchHandler);
+app.use('/api/v1/search', verifyUser, searchRouter);
 
 app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
