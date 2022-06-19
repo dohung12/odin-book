@@ -1,15 +1,5 @@
-import styled from 'styled-components';
+import Wrapper from '../assets/Wrapper/LogoWrapper';
 import logo from '../assets/images/logo.svg';
-import React from 'react';
-
-const Wrapper = styled.a`
-  img {
-    display: block;
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  margin: 0;
-`;
 
 const Logo = () => {
   return (
