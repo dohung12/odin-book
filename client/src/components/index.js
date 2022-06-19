@@ -4,7 +4,7 @@ import PrivNavBar from './PrivNavBar';
 import Sidebar from './Sidebar/';
 import FormRow from './FormRow';
 import Alert from './Alert';
-import Logout from './Logout';
+import LogoutBtn from './LogoutBtn';
 import Post from './Post/';
 import NewPostForm from './NewPostForm';
 import Avatar from './Avatar';
@@ -22,7 +22,7 @@ export {
   Alert,
   PrivNavBar,
   Sidebar,
-  Logout,
+  LogoutBtn,
   Post,
   NewPostForm,
   LikeBtn,

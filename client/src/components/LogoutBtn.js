@@ -36,7 +36,7 @@ const Wrapper = styled.a`
   }
 `;
 
-const Logout = ({ displayIcon }) => {
+const LogoutBtn = ({ displayIcon }) => {
   const { dispatch } = useAppContext();
   const navigate = useNavigate();
 
@@ -61,4 +61,4 @@ const Logout = ({ displayIcon }) => {
   );
 };
 
-export default Logout;
+export default LogoutBtn;

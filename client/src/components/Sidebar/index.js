@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Logo';
 
-import { Logout } from '..';
+import LogoutBtn from '../LogoutBtn';
 import { useAppContext } from '../../context/appContext';
 import Wrapper from './Wrapper';
 import { NavLink } from 'react-router-dom';
@@ -47,7 +47,7 @@ const Sidebar = () => {
               );
             })}
           </div>
-          <Logout displayIcon={true} />
+          <LogoutBtn displayIcon={true} />
         </div>
       </div>
     </Wrapper>

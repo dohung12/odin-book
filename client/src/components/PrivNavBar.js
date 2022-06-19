@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useAppContext } from '../context/appContext';
 import { FaAlignLeft } from 'react-icons/fa';
-import Logout from './Logout';
+import LogoutBtn from './LogoutBtn';
 import Logo from './Logo';
 import Avatar from './Avatar';
 import { NavLink } from 'react-router-dom';
@@ -98,7 +98,7 @@ const PrivNavBar = () => {
                 <NavLink to='/profile'>Profile</NavLink>
               </li>
               <li>
-                <Logout />
+                <LogoutBtn />
               </li>
             </ul>
           </details>
