@@ -54,8 +54,8 @@ const LikeBtn = ({ postId, likes }) => {
     >
       {liked ? (
         <>
-          <FaHeart color='#d81b60' />
-          <p style={{ color: '#d81b60' }}>Likes</p>
+          <FaHeart color=' #43a047' />
+          <p style={{ color: ' #43a047' }}>Liked</p>
         </>
       ) : (
         <>

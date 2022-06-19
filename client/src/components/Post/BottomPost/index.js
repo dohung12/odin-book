@@ -4,14 +4,6 @@ import CommentSection from './CommentSection';
 import InteractInfo from './InteractInfo';
 import InteractiveButtons from './InteractiveButtons';
 
-const Wrapper = styled.div`
-  /* form,
-  input {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  } */
-`;
-
 const BottomCard = ({
   likes,
   comments,
@@ -26,7 +18,7 @@ const BottomCard = ({
   };
 
   return (
-    <Wrapper>
+    <div>
       <InteractInfo comments={comments} likes={likes} />
       <InteractiveButtons
         likes={likes}
@@ -41,7 +33,7 @@ const BottomCard = ({
           showAllComments={showAllComments}
         />
       )}
-    </Wrapper>
+    </div>
   );
 };
 

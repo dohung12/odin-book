@@ -21,7 +21,7 @@ const UserInfo = ({ profilePic, _id: userId, username, email, createdAt }) => {
           <h6>
             {userId === state.user._id && (
               <FaStar
-                color='#d81b60'
+                color=' #43a047'
                 style={{
                   width: '18px',
                 }}

@@ -15,10 +15,10 @@ const Wrapper = styled.a`
   :hover {
     background: #f9d1e0;
     padding-left: 3rem;
-    color: #d81b60;
+    color: #43a047;
     font-weight: bolder;
     .icon svg {
-      color: #d81b60;
+      color: #43a047;
     }
   }
 
