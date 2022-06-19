@@ -9,7 +9,6 @@ const PostContent = ({
   hasPermission,
   postId,
   updatePosts,
-  postInfo,
 }) => {
   return (
     <>
@@ -23,7 +22,6 @@ const PostContent = ({
             setValues={setValues}
             postId={postId}
             updatePosts={updatePosts}
-            postInfo={{ ...postInfo, postContent }}
           />
         </div>
       )}

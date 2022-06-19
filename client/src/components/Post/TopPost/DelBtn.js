@@ -2,7 +2,7 @@ import { useAppContext } from '../../../context/appContext';
 import { useAuthFetch } from '../../../hooks';
 import { useState } from 'react';
 import Modal from '../../Modal';
-const DelBtn = ({ postId, values, setValues, updatePosts, postInfo }) => {
+const DelBtn = ({ postId, values, setValues, updatePosts }) => {
   const authFetch = useAuthFetch();
   const { state } = useAppContext();
   const [showModal, setShowModal] = useState(false);
@@ -44,7 +44,6 @@ const DelBtn = ({ postId, values, setValues, updatePosts, postInfo }) => {
         toggleModal={toggleModal}
         dataTarget={postId}
         onConfirm={handleDelBtn}
-        postInfo={postInfo}
       />
     </>
   );

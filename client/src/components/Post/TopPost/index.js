@@ -88,7 +88,6 @@ const TopPost = ({ author, createdAt, content, postId }) => {
           setValues={setValues}
           postContent={postContent}
           postId={postId}
-          postInfo={postInfo}
           updatePosts={updatePosts}
         />
       )}
