@@ -1,11 +1,5 @@
-import styled from 'styled-components';
 import SingleRequest from './SingleRequest';
-
-const Wrapper = styled.div`
-  background-color: #fff;
-  border-radius: 0.5rem;
-  padding: 1rem;
-`;
+import Wrapper from '../../assets/Wrapper/IndependenceBlockWrapper';
 
 const FriendRequestToMe = ({ requestToMe }) => {
   return (

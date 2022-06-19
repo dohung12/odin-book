@@ -4,11 +4,6 @@ import { useAuthFetch, useUpdateUser } from '../../hooks';
 import { FaCheck, FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
 const ResponseRequestBtn = ({ targetUserId, showText }) => {
   const authFetch = useAuthFetch();
   const updateUser = useUpdateUser();
@@ -35,7 +30,7 @@ const ResponseRequestBtn = ({ targetUserId, showText }) => {
     requestResponse(false);
   };
   return (
-    <Wrapper>
+    <div className='grid'>
       <div role={'button'} onClick={handleAccept} disabled={isLoading}>
         {showText ? 'Accept' : <FaCheck color='white' />}
       </div>
@@ -47,7 +42,7 @@ const ResponseRequestBtn = ({ targetUserId, showText }) => {
       >
         {showText ? 'Decline' : <FaTimes color='white' />}
       </div>
-    </Wrapper>
+    </div>
   );
 };
 
