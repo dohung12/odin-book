@@ -31,6 +31,13 @@ const DashboardPost = () => {
   return (
     <>
       {isLoading && <h1 aria-busy={isLoading}>Loading...</h1>}
+      {numOfPages > 1 && (
+        <PageBtnContainer
+          numOfPages={numOfPages}
+          page={page}
+          changePage={setPage}
+        />
+      )}
       {state.posts.map((post) => {
         return <Post key={post._id} {...post} />;
       })}
