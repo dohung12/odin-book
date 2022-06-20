@@ -45,20 +45,33 @@ const PageBtnContainer = ({ page, numOfPages, changePage }) => {
       </div>
       <div className='btn-container'>
         {pages.map((pageNumber) => {
-          return (
-            <button
-              className={pageNumber === page ? 'pageBtn active' : 'pageBtn'}
-              key={pageNumber}
-              onClick={() => {
-                changePage(pageNumber);
-              }}
-            >
-              {pageNumber}
-            </button>
-          );
+          // RENDER PAGE NUMBER WHEN
+          const isRender =
+            pageNumber <= 2 ||
+            (pageNumber > page - 2 && pageNumber < page + 2) ||
+            pageNumber > numOfPages - 2;
+
+          if (isRender) {
+            return (
+              <button
+                className={pageNumber === page ? 'pageBtn active' : 'pageBtn'}
+                key={pageNumber}
+                onClick={() => {
+                  changePage(pageNumber);
+                }}
+              >
+                {pageNumber}
+              </button>
+            );
+          } else if (pageNumber === page - 2 || pageNumber === page + 2) {
+            return (
+              <button className={'pageBtn'} key={pageNumber}>
+                ...
+              </button>
+            );
+          }
         })}
       </div>
-
       <div
         role={'button'}
         className='next-btn'
