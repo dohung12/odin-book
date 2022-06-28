@@ -12,9 +12,11 @@
     "heroku-postbuild": "npm run install-client && npm run build-client"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.2.0",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.30.0",
     "cookie-parser": "~1.4.6",
+    "cors": "^2.8.5",
     "debug": "~4.3.4",
     "dotenv": "^16.0.1",
     "express": "~4.18.1",
@@ -28,11 +30,10 @@
     "mongoose": "^6.3.5",
     "morgan": "~1.10.0",
     "passport": "^0.6.0",
-    "passport-jwt": "^4.0.0",
-    "@faker-js/faker": "^7.2.0"
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
-    "concurrently": "^7.2.2"
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.16"
   }
 }

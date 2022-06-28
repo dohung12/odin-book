@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
-
+const cors = require('cors');
 // passport auth
 const passport = require('passport');
 require('./config/passport')(passport);
@@ -35,6 +35,7 @@ const searchRouter = require('./routes/searchRoute');
 
 const app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(
@@ -50,7 +51,6 @@ app.use(cookieParser());
 app.use(express.static(path.resolve(__dirname, './client/build')));
 app.use(fileUpload({ useTempFiles: true }));
 app.use(passport.initialize());
-
 /**
  * ROUTE
  */
