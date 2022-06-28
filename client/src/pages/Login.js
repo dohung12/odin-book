@@ -29,7 +29,7 @@ const Wrapper = styled.main`
   }
 `;
 
-const Register = () => {
+const Login = () => {
   const [values, setValues] = useState(initUserState);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -59,7 +59,7 @@ const Register = () => {
   const loginUser = async (currentUser) => {
     setIsLoading(true);
     try {
-      const { data } = await axios.post('/login', currentUser);
+      const { data } = await axios.post('/api/v1/login', currentUser);
       const { user, token } = data;
       // save data to global context
       dispatch({
@@ -93,7 +93,7 @@ const Register = () => {
   };
 
   /**
-   * REDIRECT AFTER REGISTER SUCCESS
+   * REDIRECT AFTER LOGIN SUCCESS
    */
 
   useEffect(() => {
@@ -158,4 +158,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

@@ -45,7 +45,7 @@ const Register = () => {
 
   const registerUser = async (currentUser) => {
     try {
-      const { data } = await axios.post('/register', currentUser);
+      const { data } = await axios.post('/api/v1/register', currentUser);
       const { user, token } = data;
       // save data to global context
       dispatch({
